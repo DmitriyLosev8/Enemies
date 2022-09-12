@@ -220,5 +220,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd42f61e231f0e44ab07e8a513e734fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tempLate: {fileID: 4774510652005182934, guid: e12ca1fcb65e78744bef077cd0f883f3, type: 3}
-  _countOfEnemies: 10
+  _enemy: {fileID: 2224019790729357110, guid: e12ca1fcb65e78744bef077cd0f883f3, type: 3}
+  _countOfEnemies: 8

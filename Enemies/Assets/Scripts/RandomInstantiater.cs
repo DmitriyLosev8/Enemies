@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RandomInstantiater : MonoBehaviour
 {
-    [SerializeField] private GameObject _tempLate;
+    [SerializeField] private Enemy _enemy;
     [SerializeField] private int _countOfEnemies;
 
     public void Start()
@@ -14,7 +14,7 @@ public class RandomInstantiater : MonoBehaviour
 
     private IEnumerator Creator()
     {
-        float CoolDownOfCreate = 2;
+        var CoolDownOfCreate = new WaitForSeconds(2);
         float MinCoordinateValue = 0;
         float MaxCoordinateValue = 4;
 
@@ -24,9 +24,9 @@ public class RandomInstantiater : MonoBehaviour
             float CoordinateY = Random.Range(MinCoordinateValue, MaxCoordinateValue);
             float CoordinateZ = 0;
 
-            GameObject newObject = Instantiate(_tempLate, new Vector3(CoordinateX, CoordinateY, CoordinateZ), Quaternion.identity);
+            Enemy newEnemy = Instantiate(_enemy, new Vector3(CoordinateX, CoordinateY, CoordinateZ), Quaternion.identity);
 
-            yield return new WaitForSeconds(CoolDownOfCreate);
+            yield return CoolDownOfCreate;
         }
     }
 }
